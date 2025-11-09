@@ -27,10 +27,10 @@ This study tests the hypothesis that **transcriptome-based state-transition mode
 ### Mouse Cohorts & Group Mapping
 | TET Status Group | Experimental Group | Sample Size | Description |
 |------------------|-------------------|-------------|-------------|
-| TET_OFF_ON | Group A | n=4 | TOTO cohort - Disease development followed by suppression (ideal treatment scenario) |
+| TET_OFF_ON | Group A | n=4 | TOTO cohort - Tet off (disease development) 6 weeks then Tet on (disease suppression) for 12 weeks|
 | TET_OFF | Group B | n=6 | Induced disease mimicking human chronic phase CML|
 | TET_ON | Group C | n=3 | BCR-ABL(Lukemia Genes) suppressed |
-| TET_OFF_NIL_ON | Group D | n=7 | TKI cohort - Clinical simulation with 4-week nilotinib treatment window |
+| TET_OFF_NIL_ON | Group D | n=7 | TKI cohort - 6 weeks of disease progression and then 4-weeks of oral TKI nilotinib treatment |
 
 ### Mouse Identifiers
 - **Group A**: 476, 482, 483, 545
@@ -71,5 +71,15 @@ This study tests the hypothesis that **transcriptome-based state-transition mode
 <img src="https://github.com/user-attachments/assets/084f2a35-0b58-4e03-ba7f-7fea2472b0e7" />
 
 
+## Data Augmentation
+
+## Data Augmentation Summary
+
+| Group | TET Status     | Mouse IDs                     | NaN Replacement | Notes                              |
+|-------|----------------|-------------------------------|-----------------|------------------------------------|
+| A     | TET_OFF_ON     | [476, 482, 483, 545]          | `0`             |  All the missing data are from tet-on phase meaning healthy mice |
+| C     | TET_ON         | [489, 490, 488]               | `0`             | In this cohort BCR-ABL gene is supressed and hence the mice are healthy   |
+| B     | TET_OFF        | [480, 541, 484, 477, 487, 542] | 99.4 (2 x max_val) |  Mice died after disease progression  |
+| D     | TET_OFF_NIL_ON | [502, 512, 507, 508, 514, 511, 513] | Gaussian Process Regression   | Model-based imputation       |
 
 
