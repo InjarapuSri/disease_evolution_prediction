@@ -3,28 +3,13 @@ Temporal Data for State-Transition Modeling of Blood Transcriptome Predicts Dise
 
 Shared drive: https://drive.google.com/drive/folders/1TBw_nIOSyVElKF9zGMJ6CWXd1ehQs6ok
 
-
-# Research Summary: State-transition Modeling of Blood Transcriptome in CML
-
-## Study Overview
+## Data Overview
 **Title:** State-transition Modeling of Blood Transcriptome Predicts Disease Evolution and Treatment Response in Chronic Myeloid Leukemia (CML)
-
 **Organism:** *Mus musculus* (Mouse)
 
-**Technology:** Expression profiling by high throughput sequencing
 
-**Publication Status:** Public since November 2, 2023
+## Cohorts
 
----
-
-## Research Objective
-This study tests the hypothesis that **transcriptome-based state-transition models** can accurately predict cancer evolution and treatment response in Chronic Myeloid Leukemia.
-
----
-
-## Experimental Design
-
-### Mouse Cohorts & Group Mapping
 | TET Status Group | Experimental Group | Sample Size | Description |
 |------------------|-------------------|-------------|-------------|
 | TET_OFF_ON | Group A | n=4 | TOTO cohort - Tet off (disease development) 6 weeks then Tet on (disease suppression) for 12 weeks|
@@ -39,7 +24,6 @@ This study tests the hypothesis that **transcriptome-based state-transition mode
 - **Group D**: 502, 512, 507, 508, 514, 511, 513
 
 # Mouse BCR-ABL Time Series Data
-
 | mouse_id | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 |
 |----------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 476 | 0.000000 | 0.000000 | 2.781947 | 2.037780 | 2.551139 | 3.155107 | 1.538886 | 0.155031 | 0.000000 | NaN | NaN | NaN | 0.000000 | NaN | NaN | NaN | 0.000000 | NaN | 0.000000 |
@@ -65,21 +49,20 @@ This study tests the hypothesis that **transcriptome-based state-transition mode
 
 
 ## Vizualisation
-
-
-
 <img src="https://github.com/user-attachments/assets/084f2a35-0b58-4e03-ba7f-7fea2472b0e7" />
 
 
 ## Data Augmentation
-
-## Data Augmentation Summary
-
 | Group | TET Status     | Mouse IDs                     | NaN Replacement | Notes                              |
 |-------|----------------|-------------------------------|-----------------|------------------------------------|
 | A     | TET_OFF_ON     | [476, 482, 483, 545]          | `0`             |  All the missing data are from tet-on phase meaning healthy mice |
 | C     | TET_ON         | [489, 490, 488]               | `0`             | In this cohort BCR-ABL gene is supressed and hence the mice are healthy   |
 | B     | TET_OFF        | [480, 541, 484, 477, 487, 542] | 99.4 (2 x max_val) |  Mice died after disease progression  |
 | D     | TET_OFF_NIL_ON | [502, 512, 507, 508, 514, 511, 513] | Gaussian Process Regression   | Model-based imputation       |
+
+
+### Group D data augmentation vizualization
+<img  src="https://github.com/user-attachments/assets/d3674b99-81db-46c3-b5e3-882056043728" />
+
 
 
